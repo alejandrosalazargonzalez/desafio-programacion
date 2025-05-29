@@ -10,10 +10,10 @@ import alejandrosalazargonzalez.proyecto.proyecto.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-    private final UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
-    public UsuarioService( UsuarioRepository usuarioRepository) {
+    public void setUsuarioRepository( UsuarioRepository usuarioRepository) {
         this.usuarioRepository =usuarioRepository;
     }
     

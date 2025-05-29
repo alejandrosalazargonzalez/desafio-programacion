@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -18,6 +20,7 @@ import jakarta.persistence.Table;
 public class Usuario {
     private String nombre;
     private int id;
+    private Roll roll;
 
     /**
      * constructor vacio
@@ -70,6 +73,16 @@ public class Usuario {
         return this;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "roll", nullable = false) 
+    public Roll getRoll() {
+        return this.roll;
+    }
+
+    public void setRoll(Roll roll) {
+        this.roll = roll;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -93,9 +106,5 @@ public class Usuario {
             ", id='" + getId() + "'" +
             "}";
     }
-
-    
-
-
 
 }
