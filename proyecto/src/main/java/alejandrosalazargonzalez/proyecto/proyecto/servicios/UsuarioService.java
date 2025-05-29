@@ -74,6 +74,9 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
+    /**
+     * metodo para eliminar a un usuario de la base de datos por su id
+     */
     public Usuario deleteUsuario(int id){
         if (id < 0) {
             throw  new RuntimeException("id no valido");
